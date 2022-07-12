@@ -1,7 +1,7 @@
 const each = require("jest-each").default;
-const getLargest = require("../getLargest");
+const getLargest = require("../numberFucntions");
 
-describe("getLargest", () => {
+describe("numberFucntions", () => {
   test("It is a function", () => {
     expect(typeof getLargest).toBe("function");
   });
