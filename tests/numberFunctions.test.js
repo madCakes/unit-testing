@@ -2,6 +2,16 @@ const each = require("jest-each").default;
 const { getLargest, getSmallest } = require("../numberFucntions");
 
 describe("getLargest", () => {
+  test("It is a function", () => {
+    expect(typeof getLargest).toBe("function");
+  });
+
+  describe("It reports invalid inputs correctly", () => {
+    expect(() => {
+      getLargest(1, 2);
+    }).toThrow("ERROR: all inputs must have a value");
+  });
+
   describe("It handles normal inputs successfully", () => {
     each([
       [[1, 2, 3], 3],
@@ -19,6 +29,12 @@ describe("getSmallest", () => {
     expect(typeof getSmallest).toBe("function");
   });
 
+  describe("It reports invalid inputs correctly", () => {
+    expect(() => {
+      getSmallest(1, 2);
+    }).toThrow("ERROR: all inputs must have a value");
+  });
+
   describe("It handles normal inputs successfully", () => {
     each([
       [[1, 2, 3], 1],
@@ -30,5 +46,3 @@ describe("getSmallest", () => {
     });
   });
 });
-
-extreme();
